@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Ophelia: A minimalist SwiftUI-based chatbot interface for OpenAI and Anthropic" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ophelia - Minimalist Chatbot Interface</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Ophelia.chat</h1>
+            <p>A minimalist SwiftUI-based chatbot interface designed for smooth, engaging conversations.</p>
+            <a class="cta-button" href="#features">Explore Features</a>
+        </div>
+        <div class="hero-bg" id="heroBg"></div>
+    </header>
+
+    <main>
+        <section class="about" id="about" data-animation="fade-in-up">
+            <div class="about-content">
+                <h2 class="section-title" data-animation="underline">About Ophelia</h2>
+                <p>Ophelia supports both OpenAI and Anthropic models, offering a customizable system message to guide the AI’s style and behavior. With speech synthesis, automatic settings persistence, and minimalistic design, Ophelia provides a tailored and intuitive AI experience right at your fingertips.</p>
+            </div>
+        </section>
+
+        <section class="showcase" id="features" data-animation="fade-in-up">
+            <h2 class="section-title" data-animation="underline">Key Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>Multiple Providers</h3>
+                    <p>Seamlessly switch between OpenAI’s GPT models and Anthropic’s Claude models to find the perfect fit for your workflow.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Model Selection & System Message</h3>
+                    <p>Choose from various AI models and set a custom system message to shape the assistant’s behavior and style.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Speech Integration</h3>
+                    <p>Autoplay responses using system voices or OpenAI-based TTS, bringing a more natural and dynamic feel to your interactions.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Automatic Settings Persistence</h3>
+                    <p>Your provider, model, and API keys are saved automatically, ensuring a seamless experience between sessions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenshots Section -->
+        <section class="screenshots" id="screenshots" data-animation="fade-in-up">
+            <h2 class="section-title" data-animation="underline">Screenshots</h2>
+            <div class="showcase-carousel-container">
+                <button class="showcase-carousel-prev" aria-label="Previous screenshot">‹</button>
+                <div class="showcase-carousel">
+                    <div class="showcase-item"><img src="ophelia_0.png" alt="App screen 0"></div>
+                    <div class="showcase-item"><img src="ophelia_1.png" alt="App screen 1"></div>
+                </div>
+                <button class="showcase-carousel-next" aria-label="Next screenshot">›</button>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonials" data-animation="fade-in-up">
+            <h2 class="section-title" data-animation="underline">What People Are Saying</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-slide active">
+                    <p>“Ophelia understood me so well, I thought she’d been living in my sock drawer. Turns out she just knows my soul!”</p>
+                    <span>- Alex</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>“I told Ophelia I was feeling blue. She suggested I wear a purple hat and dance in the kitchen. I did. My dog approved.”</p>
+                    <span>- Jordan</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>“It’s like having a friend who always compliments my taste in pizza toppings, no matter how weird I get.”</p>
+                    <span>- Taylor</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>“Ophelia whispered a secret recipe to me once. I baked the brownies and they tasted like hugs and unicorn giggles!”</p>
+                    <span>- Casey</span>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button id="prevBtn" aria-label="Previous testimonial">‹</button>
+                <button id="nextBtn" aria-label="Next testimonial">›</button>
+            </div>
+        </section>
+
+        <section class="requirements" id="requirements" data-animation="fade-in-up">
+            <h2 class="section-title" data-animation="underline">Requirements</h2>
+            <p>To use Ophelia, you must provide valid API keys:</p>
+            <ul>
+                <li>OpenAI key: <a href="https://platform.openai.com" target="_blank" rel="noopener">https://platform.openai.com</a></li>
+                <li>Anthropic key: <a href="https://console.anthropic.com" target="_blank" rel="noopener">https://console.anthropic.com</a></li>
+            </ul>
+            <p>Without a valid API key, the app will not be able to fetch AI responses.</p>
+        </section>
+
+        <section class="get-started" id="download" data-animation="fade-in-up">
+            <h2 class="section-title" data-animation="underline">Getting Started</h2>
+            <p>
+                <ol>
+                    <li><strong>Clone the repository:</strong><br><code>git clone https://github.com/kroonen/ophelia.git</code></li>
+                    <li><strong>Open in Xcode:</strong> Open the project and run on a simulator or device.</li>
+                    <li><strong>Configure Keys:</strong> Enter your OpenAI or Anthropic API key in the Settings screen before chatting.</li>
+                </ol>
+            </p>
+            <div class="cta-links">
+                <a class="cta-button" href="https://github.com/kroonen/ophelia" target="_blank" rel="noopener">View on GitHub</a>
+                <p class="testflight-note">Coming soon to TestFlight! Stay tuned for public beta testing.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© <span id="year"></span> Ophelia. All Rights Reserved. | Built with <span class="footer-heart"></span> by <a href="https://kroonen.ai" style="color: inherit; opacity: 0.7; text-decoration: none;">Robin Kroonen</a></p>
+    </footer>
+
+    <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>
