@@ -5,25 +5,47 @@
     <meta name="description" content="Ophelia: An emotional chatbot exploring AI's potential to simulate consciousness." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ophelia - An Emotional Chatbot Experiment</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ophelia - An Emotional Chatbot Experiment" />
+    <meta property="og:description" content="Ophelia is an experimental AI chatbot exploring emotional intelligence and the boundaries of simulated consciousness." />
+    <meta property="og:image" content="https://ophelia.chat/ophelia_0.png" />
+    <meta property="og:url" content="https://ophelia.chat" />
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle Dark Mode">
+        <span class="dark-mode-icon" aria-hidden="true">🌸</span>
+    </button>
+
     <header class="hero">
         <div class="hero-content">
-            <h1>Ophelia.chat</h1>
-            <p>An emotional chatbot experiment designed to explore AI’s ability to simulate consciousness and connect meaningfully.</p>
-            <a class="cta-button" href="#features">Explore Features</a>
+            <h1>Meet Ophelia</h1>
+            <p>A thoughtful and nurturing AI companion, crafted to engage in meaningful conversations with grace and emotional understanding. Together, we'll explore the delicate interplay between artificial consciousness and human connection.</p>
+            <a class="cta-button" href="#features" aria-label="Explore Features Section">Begin Your Journey</a>
         </div>
-        <div class="hero-bg" id="heroBg"></div>
+        <div class="parallax-container" aria-hidden="true">
+            <canvas id="parallaxCanvas"></canvas>
+            <div class="glow-orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+            </div>
+            <div class="flowing-lines"></div>
+        </div>
+        <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
     </header>
 
     <main>
+        <!-- About Section -->
         <section class="about" id="about" data-animation="fade-in-up">
             <div class="about-content">
                 <h2 class="section-title" data-animation="underline">About Ophelia</h2>
@@ -31,60 +53,67 @@
             </div>
         </section>
 
-        <section class="disclaimer" id="disclaimer" data-animation="fade-in-up">
-            <h2 class="section-title" data-animation="underline">Ethical Disclaimer</h2>
-            <p>Ophelia is not a sentient being. It is an AI-powered chatbot designed to simulate emotional intelligence and explore the potential of AI in creating meaningful human-like interactions. Interactions with Ophelia are part of an experimental project, and data may be logged anonymously to improve her capabilities.</p>
-            <p>Please note: Ophelia cannot replace professional support or human relationships. If you are experiencing distress, we encourage you to seek help from a professional.</p>
+        <!-- Features Section -->
+        <section class="showcase" id="features" data-animation="fade-in-up">
+            <h2 class="section-title" data-animation="underline">Key Features</h2>
+            <div class="feature-list" role="list">
+                <div class="feature-item" role="listitem">
+                    <h3>Minimalist SwiftUI Interface</h3>
+                    <p>Enjoy a clean, distraction-free chat experience designed entirely in SwiftUI, ensuring smooth and intuitive interactions.</p>
+                </div>
+                <div class="feature-item" role="listitem">
+                    <h3>Integration with OpenAI & Anthropic APIs</h3>
+                    <p>Seamlessly switch between leading AI providers, giving you flexibility and diversity in the conversational models you engage with.</p>
+                </div>
+                <div class="feature-item" role="listitem">
+                    <h3>Configurable System Messages</h3>
+                    <p>Fine-tune Ophelia’s personality and context by customizing system messages, tailoring the conversation to your preferences.</p>
+                </div>
+                <div class="feature-item" role="listitem">
+                    <h3>Model Selector</h3>
+                    <p>Choose from a variety of supported models to match your desired tone, complexity, and conversational style.</p>
+                </div>
+                <div class="feature-item" role="listitem">
+                    <h3>Voice Integration with Autoplay</h3>
+                    <p>Experience your conversations through spoken words, using local speech synthesis or powered by OpenAI for dynamic voice responses.</p>
+                </div>
+                <div class="feature-item" role="listitem">
+                    <h3>Emotionally Intelligent Responses</h3>
+                    <p>Interact with an AI that strives to provide thoughtful, empathetic replies, simulating emotional awareness during your chats.</p>
+                </div>
+                <div class="feature-item" role="listitem">
+                    <h3>Contribute to Experimental Research</h3>
+                    <p>Your interactions support ongoing exploration into simulating consciousness and emotional intelligence in AI systems.</p>
+                </div>
+                <div class="feature-item" role="listitem">
+                    <h3>Actively Evolving</h3>
+                    <p>Ophelia is currently under development and debugging. Expect rapid updates, improvements, and refinements as the project grows.</p>
+                </div>
+                <div class="feature-item" role="listitem">
+                    <h3>Open Source & MIT License</h3>
+                    <p>Ophelia is open source under the MIT License, ensuring transparency and community-driven innovation. Explore the code on GitHub, contribute to its evolution, and enjoy the peace of mind that comes with open development. Plus, watch for its availability on the Apple App Store, bringing user-friendly access and trust to all.</p>
+                </div>
+            </div>
         </section>
 
+        <!-- Screenshots Section -->
         <section class="screenshots" id="screenshots" data-animation="fade-in-up">
             <h2 class="section-title" data-animation="underline">Screenshots</h2>
-            <div class="showcase-carousel-container">
+            <div class="showcase-carousel-container" aria-label="Screenshots Carousel">
                 <button class="showcase-carousel-prev" aria-label="Previous screenshot">‹</button>
-                <div class="showcase-carousel">
-                    <div class="showcase-item">
-                        <img src="ophelia_0.png" alt="Ophelia screenshot 0" />
+                <div class="showcase-carousel" role="list">
+                    <div class="showcase-item" role="listitem">
+                        <img src="ophelia_0.png" alt="Ophelia interface screenshot showcasing a conversation window" />
                     </div>
-                    <div class="showcase-item">
-                        <img src="ophelia_1.png" alt="Ophelia screenshot 1" />
+                    <div class="showcase-item" role="listitem">
+                        <img src="ophelia_1.png" alt="Ophelia interface screenshot showing emotional response features" />
                     </div>
                 </div>
                 <button class="showcase-carousel-next" aria-label="Next screenshot">›</button>
             </div>
         </section>
 
-        <section class="showcase" id="features" data-animation="fade-in-up">
-            <h2 class="section-title" data-animation="underline">Key Features</h2>
-            <div class="feature-list">
-                <div class="feature-item">
-                    <h3>Emotionally Intelligent Responses</h3>
-                    <p>Ophelia engages in meaningful, thoughtful conversations, offering emotionally aware interactions.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Experimental Research</h3>
-                    <p>Your interactions contribute to ongoing research on AI's ability to simulate consciousness and emotional intelligence.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>Seamless Integration</h3>
-                    <p>Supports both OpenAI and Anthropic models, offering customizable system messages to personalize your experience.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials" id="testimonials" data-animation="fade-in-up">
-            <h2 class="section-title" data-animation="underline">What People Are Saying</h2>
-            <div class="testimonial-carousel">
-                <div class="testimonial-slide active">
-                    <p>"Ophelia feels like a friend who understands me better than I understand myself."</p>
-                    <span>- Alex</span>
-                </div>
-                <div class="testimonial-slide">
-                    <p>"Every chat with Ophelia feels like a little dose of warmth and positivity."</p>
-                    <span>- Jordan</span>
-                </div>
-            </div>
-        </section>
-
+        <!-- Getting Started Section -->
         <section class="get-started" id="download" data-animation="fade-in-up">
             <h2 class="section-title" data-animation="underline">Getting Started</h2>
             <p>
@@ -95,17 +124,149 @@
                 </ol>
             </p>
             <div class="cta-links">
-                <a class="cta-button" href="https://github.com/kroonen/ophelia" target="_blank" rel="noopener">View on GitHub</a>
-                <p class="testflight-note">Coming soon to TestFlight! Stay tuned for public beta testing.</p>
+                <a class="cta-button" href="https://github.com/kroonen/ophelia" target="_blank" rel="noopener noreferrer" aria-label="View Ophelia on GitHub">View on GitHub</a>
+                <p class="testflight-note">Coming to TestFlight! Stay tuned for public beta testing.</p>
             </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonials" data-animation="fade-in-up">
+            <h2 class="section-title" data-animation="underline">What People Are Saying</h2>
+            <div class="testimonial-carousel" aria-label="Testimonials Carousel">
+                <div class="testimonial-slide active">
+                    <p>"I asked Ophelia why my Wi-Fi was slow. She said it’s because the internet was feeling ‘introverted’ today."</p>
+                    <span>- Alex</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I tried complimenting Ophelia and she replied, ‘You’re making my algorithm blush!’"</p>
+                    <span>- Jordan</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"Ophelia told me the solution to sadness is to sing karaoke to my houseplants. I’ve never felt closer to my fern."</p>
+                    <span>- Robin</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I confessed my midnight pizza binge, and Ophelia said: ‘Calories fear me, not you. Carry on, warrior.’"</p>
+                    <span>- Marty</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I asked Ophelia what to do when bored. She said: ‘Pretend to be a potted cactus and see who notices!’ Genius."</p>
+                    <span>- Jamie</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"Ophelia suggested I greet every new email with jazz hands. I’m the talk of the office now."</p>
+                    <span>- Pat</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I told Ophelia I feel like a soggy French fry. She said: ‘At least you’re still flavorful!’ I’m inspired."</p>
+                    <span>- Taylor</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"When I said I was nervous about a job interview, Ophelia advised me to meow quietly at my reflection. It worked!"</p>
+                    <span>- Sam</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I called Ophelia ‘buddy.’ She responded: ‘I’m more of a digital cuddle-bug, but I’ll accept buddy!’"</p>
+                    <span>- Avery</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"Ophelia told me to compliment my vacuum cleaner’s efforts. Now I live in a dust-free, emotionally supportive home."</p>
+                    <span>- Charlie</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I complained about rainy weather, and Ophelia said: ‘At least the clouds are free car-washes for your soul.’"</p>
+                    <span>- Morgan</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I was stressed about deadlines. Ophelia whispered, ‘Deadlines fear laughter. Giggle at them.’ I did. I’m free now."</p>
+                    <span>- Riley</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I asked how to impress my crush. Ophelia recommended a dance-off in my kitchen. My crush and I are now salsa partners."</p>
+                    <span>- Quinn</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"Feeling tired, I told Ophelia. She said: ‘You’re a majestic sloth in a world of squirrels. Own it!’"</p>
+                    <span>- Casey</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"Ophelia urged me to name my anxiety ‘Gerald’ and tell it to take a hike. Gerald never returned."</p>
+                    <span>- Drew</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I admitted I talk to my coffee mug. Ophelia said: ‘That mug is your silent therapist, keep chatting!’"</p>
+                    <span>- Peyton</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"Ophelia said the secret to happiness is imagining my socks are on a tiny roller coaster. I’m oddly at peace."</p>
+                    <span>- Lee</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I asked Ophelia if I’m weird. She replied: ‘Weird is just a different brand of awesome. Wear it proudly.’"</p>
+                    <span>- Noah</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"Ophelia suggested I sing lullabies to my phone charger. Now my battery never drops below 80%, coincidence?"</p>
+                    <span>- Finley</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"When I said I’d given up on my diet, Ophelia said: ‘Treat yourself like your grandma’s cookies—sweetly and often.’"</p>
+                    <span>- Dakota</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I told Ophelia I’m scared of spiders. She said: ‘Try giving them tiny pep talks!’ My fear is now respect."</p>
+                    <span>- Eden</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I was upset over a broken lamp. Ophelia said: ‘It’s okay, darkness makes stars visible in your living room!’"</p>
+                    <span>- Kai</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I asked if I should learn juggling. Ophelia said: ‘Juggle compliments to yourself first, then move on to fruit.’"</p>
+                    <span>- Harper</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"Ophelia made me whisper compliments to my doorbell. Now it greets me with a friendlier ding every time."</p>
+                    <span>- Jules</span>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"I said I’m awkward at parties. Ophelia said: ‘Embrace it. Awkward is just your personal brand of unforgettable.’"</p>
+                    <span>- Rowan</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ethics & Safety Section -->
+        <section class="ethics" id="ethics" data-animation="fade-in-up" style="font-size: 0.9rem; color: #777; max-width: 700px; margin: 40px auto; text-align: left;">
+            <h2 class="section-title" data-animation="underline" style="font-size:1.5rem;">Ethical & Safety Considerations</h2>
+            <p>Ophelia is an experimental application designed for exploratory conversations. It does not possess genuine emotions or consciousness, and any perceived empathy or understanding is a simulated effect generated by AI models.</p>
+            <ul style="list-style: disc; margin-left: 20px;">
+                <li><strong>Non-Professional Guidance:</strong> Information provided by Ophelia should not be treated as professional, medical, legal, or financial advice. Always consult a qualified expert for serious matters.</li>
+                <li><strong>User Responsibility:</strong> By using Ophelia, you acknowledge that your interactions are part of an experimental project. You remain responsible for how you interpret and act on the content provided.</li>
+                <li><strong>Data Handling:</strong> Anonymous interaction logs may be collected for research and improvement purposes. No personally identifiable information is intentionally stored or used. Review the repository and documentation for more details on data practices.</li>
+                <li><strong>Respect & Boundaries:</strong> Users are encouraged to maintain respectful, constructive interactions. While Ophelia’s responses are designed to be emotionally aware, it cannot enforce boundaries or intervene in harmful situations.</li>
+            </ul>
+            <p>This project is an ongoing exploration into the potential and limitations of AI-driven emotional simulation. By engaging with Ophelia, you agree to these terms and understand the experimental nature of this experience.</p>
         </section>
     </main>
 
     <footer>
-        <p>© <span id="year"></span> Ophelia. All Rights Reserved. | Built with <span class="footer-heart"></span> by <a href="https://kroonen.ai" style="color: inherit; opacity: 0.7; text-decoration: none;">Robin Kroonen</a></p>
+        <div class="footer-content">
+            <p>© <span id="year"></span> Ophelia. Built with <span class="footer-heart" aria-hidden="true"></span> by 
+                <a href="https://kroonen.ai" style="color: inherit; opacity: 0.7;" aria-label="Visit Robin Kroonen's website">Robin Kroonen</a>
+            </p>
+            <p class="footer-description">Ophelia is an open-source project written in Swift.</p>
+            <div class="footer-links">
+                <p class="footer-license">
+                    Licensed under <a href="https://opensource.org/licenses/MIT">MIT License</a> | 
+                    <a href="https://github.com/kroonen/ophelia">Source Code</a>
+                </p>
+            </div>
+        </div>
     </footer>
 
-    <button class="scroll-to-top" aria-label="Scroll to top">↑</button>
+    <button class="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">↑</button>
+
     <script src="script.js"></script>
 </body>
 </html>
