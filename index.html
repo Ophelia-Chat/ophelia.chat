@@ -23,14 +23,24 @@
 </head>
 <body>
     <button class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle Dark Mode">
-        <span class="dark-mode-icon" aria-hidden="true">🌸</span>
+        <span class="dark-mode-icon" aria-hidden="true">🔅</span>
     </button>
+
+    <div class="testflight-banner">
+        <button class="close-banner" aria-label="Close banner">×</button>
+        <a href="https://testflight.apple.com/join/3T2qSW7h" target="_blank">
+            <span class="beta-icon">🚀</span>
+            Join the TestFlight Beta Now!
+        </a>
+    </div>
 
     <header class="hero">
         <div class="hero-content">
             <h1>Meet Ophelia</h1>
             <p>A thoughtful and nurturing AI companion, crafted to engage in meaningful conversations with grace and emotional understanding. Together, we'll explore the delicate interplay between artificial consciousness and human connection.</p>
-            <a class="cta-button" href="#features" aria-label="Explore Features Section">Begin Your Journey</a>
+            <div class="hero-cta">
+                <a class="cta-button" href="https://testflight.apple.com/join/3T2qSW7h" target="_blank">Join TestFlight Beta</a>
+            </div>
         </div>
         <div class="parallax-container" aria-hidden="true">
             <canvas id="parallaxCanvas"></canvas>
@@ -42,6 +52,9 @@
             <div class="flowing-lines"></div>
         </div>
         <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+        <a href="#features" class="scroll-down-arrow" aria-label="Scroll to features">
+            <span>↓</span>
+        </a>
     </header>
 
     <main>
@@ -96,6 +109,19 @@
             </div>
         </section>
 
+        <section class="join-beta" data-animation="fade-in-up">
+            <h2>Experience Ophelia Today!</h2>
+            <p>Be among the first to explore emotional AI conversations. Join our TestFlight beta and help shape the future of AI interaction.</p>
+            <div class="beta-buttons">
+                <a class="cta-button" href="https://testflight.apple.com/join/3T2qSW7h" target="_blank">
+                    Download TestFlight Beta
+                </a>
+                <a class="cta-button" href="https://github.com/kroonen/ophelia" target="_blank">
+                    View on GitHub
+                </a>
+            </div>
+        </section>
+
         <!-- Screenshots Section -->
         <section class="screenshots" id="screenshots" data-animation="fade-in-up">
             <h2 class="section-title" data-animation="underline">Screenshots</h2>
@@ -119,16 +145,19 @@
         <!-- Getting Started Section -->
         <section class="get-started" id="download" data-animation="fade-in-up">
             <h2 class="section-title" data-animation="underline">Getting Started</h2>
-            <p>
-                <ol>
-                    <li><strong>Clone the repository:</strong><br><code>git clone https://github.com/kroonen/ophelia.git</code></li>
-                    <li><strong>Open in Xcode:</strong> Open the project and run on a simulator or device.</li>
-                    <li><strong>Configure Keys & Tokens:</strong> Enter your OpenAI or Anthropic API key or your GitHub token for Azure models in the Settings screen before chatting. Choose your model and start exploring!</li>
-                </ol>
-            </p>
+            <div class="code-block">
+                <code>git clone https://github.com/kroonen/ophelia.git</code>
+                <button class="copy-button" onclick="copyCode(this)">Copy</button>
+            </div>
+            <p>After cloning, open in Xcode and add your API keys in Settings:</p>
+            <ul>
+                <li>OpenAI API key, or</li>
+                <li>Anthropic API key, or</li>
+                <li>GitHub token for Azure models</li>
+            </ul>
             <div class="cta-links">
-                <a class="cta-button" href="https://github.com/kroonen/ophelia" target="_blank" rel="noopener noreferrer" aria-label="View Ophelia on GitHub">View on GitHub</a>
-                <p class="testflight-note">Coming to TestFlight! Stay tuned for public beta testing.</p>
+                <a class="cta-button" href="https://github.com/kroonen/ophelia" target="_blank">View on GitHub</a>
+                <a class="cta-button" href="https://testflight.apple.com/join/3T2qSW7h" target="_blank">Join TestFlight Beta</a>
             </div>
         </section>
 

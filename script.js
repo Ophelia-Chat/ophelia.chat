@@ -7,6 +7,26 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollToTop();
     initScrollAnimations();
     initShowcaseCarousel();
+    
+    // TestFlight Banner
+    document.querySelector('.close-banner')?.addEventListener('click', () => {
+        document.querySelector('.testflight-banner').style.display = 'none';
+    });
+
+    // Show banner again after scrolling past hero
+    const showBannerOnScroll = () => {
+        const banner = document.querySelector('.testflight-banner');
+        const hero = document.querySelector('.hero');
+        
+        if (hero && banner) {
+            const heroBottom = hero.offsetTop + hero.offsetHeight;
+            if (window.scrollY > heroBottom) {
+                banner.style.display = 'block';
+            }
+        }
+    };
+
+    window.addEventListener('scroll', showBannerOnScroll);
 });
 
 /**
@@ -284,22 +304,59 @@ function initShowcaseCarousel() {
 
     let currentCarouselSlide = 0;
     const carouselItems = document.querySelectorAll('.showcase-item');
-    const itemsToShow = 2;
-    const itemWidth = 320; // Approx width + gap
+    const itemsToShow = window.innerWidth < 768 ? 1 : 2;
+    const itemWidth = 320; // Width + gap
 
-    function updateCarousel() {
-        showcaseCarousel.style.transform = `translateX(-${currentCarouselSlide * itemWidth}px)`;
+    function updateCarousel(instant = false) {
+        const transform = `translateX(-${currentCarouselSlide * itemWidth}px)`;
+        showcaseCarousel.style.transition = instant ? 'none' : 'transform 0.5s ease';
+        showcaseCarousel.style.transform = transform;
+    }
+
+    function updateButtonStates() {
+        prevCarouselBtn.style.opacity = currentCarouselSlide === 0 ? '0.5' : '1';
+        nextCarouselBtn.style.opacity = 
+            currentCarouselSlide >= carouselItems.length - itemsToShow ? '0.5' : '1';
     }
 
     prevCarouselBtn.addEventListener('click', () => {
-        currentCarouselSlide = Math.max(currentCarouselSlide - 1, 0);
-        updateCarousel();
+        if (currentCarouselSlide > 0) {
+            currentCarouselSlide--;
+            updateCarousel();
+            updateButtonStates();
+        }
     });
 
     nextCarouselBtn.addEventListener('click', () => {
         if (currentCarouselSlide < carouselItems.length - itemsToShow) {
             currentCarouselSlide++;
             updateCarousel();
+            updateButtonStates();
         }
+    });
+
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            currentCarouselSlide = 0;
+            updateCarousel(true);
+            updateButtonStates();
+        }, 100);
+    });
+
+    updateButtonStates();
+}
+
+function copyCode(button) {
+    const code = button.previousElementSibling.textContent;
+    navigator.clipboard.writeText(code).then(() => {
+        button.textContent = 'Copied!';
+        button.classList.add('copied');
+        setTimeout(() => {
+            button.textContent = 'Copy';
+            button.classList.remove('copied');
+        }, 2000);
     });
 }
